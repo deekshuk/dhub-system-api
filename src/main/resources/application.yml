@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: "local"
+amazon:
+  aws:
+    secretKey: O/KenVPQD6iMaRvObXRjNXL0QqhkQ+FUDk7pKWAJ
+    accessKey: AKIASIKXLFXQYL2ZXONL
+    region: us-east-2
+  dynamodb:
+    endpoint: dynamodb.us-east-2.amazonaws.com
+
+---
+
+#spring:
+#  profiles:
+#    active: "dev"
+#amazon:
+#  aws:
+#    secretKey: "dummy dev secretkey"
+#    accessKey: "dummy dev accesskey"
+#    region: us-east-1
+#  dynamodb:
+#    endpoint: dynamodb.us-east-1.amazonaws.com
