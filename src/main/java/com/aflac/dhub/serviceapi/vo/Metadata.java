@@ -10,9 +10,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-/*import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;*/
+import org.apache.commons.lang.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -93,7 +93,7 @@ public class Metadata implements Serializable
         return this;
     }
 
-    /*@Override
+    @Override
     public String toString() {
         return new ToStringBuilder(this).append("code", code).append("descriptions", descriptions).append("status", status).append("additionalProperties", additionalProperties).toString();
     }
@@ -113,6 +113,6 @@ public class Metadata implements Serializable
         }
         Metadata rhs = ((Metadata) other);
         return new EqualsBuilder().append(code, rhs.code).append(additionalProperties, rhs.additionalProperties).append(descriptions, rhs.descriptions).append(status, rhs.status).isEquals();
-    }*/
+    }
 
 }

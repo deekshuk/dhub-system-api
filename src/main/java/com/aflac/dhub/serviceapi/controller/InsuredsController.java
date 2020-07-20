@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import  com.aflac.dhub.serviceapi.vo.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /***
  *  DigitalHub ServiceAPI controller
@@ -35,14 +39,40 @@ public class InsuredsController {
     public String status(){
         return "Insureds Service is up and running !!!";
     }
+
     @GetMapping(path = "/v1/insureds/{insuredId}")
     public String getInsuredsByGuid(@PathVariable String insuredId){
         return "Get Insureds by InsuredId!" + insuredId;
     }
-    
+    /*@GetMapping("/metadata")
+    public ResponseEntity<ResponseMetadata> getMetadata(){
+        return new ResponseEntity<ResponseMetadata>(createResponse(), HttpStatus.OK);
+    }*/
+
+    private ResponseMetadata createResponse(){
+        ResponseMetadata responseMetadata = new ResponseMetadata();
+
+        Metadata metadata = new Metadata();
+
+        Description description = new Description();
+        description.setCode("501");
+        description.setContext("record-read");
+        description.setLongDescription("Resource GET /insureds is not implemented");
+        description.setShortDescription("Not Implemented");
+        description.setType("error");
+
+        List<Description> descriptionList = new ArrayList<>();
+        descriptionList.add(description);
+
+        metadata.setDescriptions(descriptionList);
+        metadata.setStatus("failure");
+
+        responseMetadata.setMetadata(metadata);
+        return responseMetadata;
+    }
     @GetMapping("/v1/insureds")
-    public String getAllInsureds(){
-        return "Get all Insureds!";
+    public ResponseEntity<ResponseMetadata> getAllInsureds(){
+        return new ResponseEntity<ResponseMetadata>(createResponse(), HttpStatus.OK);
     }
     /**
      *

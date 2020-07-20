@@ -9,11 +9,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-/*
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
-*/
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -58,7 +56,7 @@ public class ResponseMetadata implements Serializable
         return this;
     }
 
-    /*@Override
+    @Override
     public String toString() {
         return new ToStringBuilder(this).append("metadata", metadata).append("additionalProperties", additionalProperties).toString();
     }
@@ -78,6 +76,6 @@ public class ResponseMetadata implements Serializable
         }
         ResponseMetadata rhs = ((ResponseMetadata) other);
         return new EqualsBuilder().append(metadata, rhs.metadata).append(additionalProperties, rhs.additionalProperties).isEquals();
-    }*/
+    }
 
 }
